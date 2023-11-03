@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { initTE, Chart } from "tw-elements";
+// import LineChart from "../../components/dashboard/LineChart";
 
 const Summary = () => {
   useEffect(() => {
@@ -55,7 +56,7 @@ const Summary = () => {
                         href="#"
                         className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
-                        Dashboard
+                        2019
                       </a>
                     </li>
                     <li>
@@ -63,7 +64,7 @@ const Summary = () => {
                         href="#"
                         className="block px-4 py-2 hover-bg-gray-100 dark:hover:bg-gray-600 dark:hover-text-white"
                       >
-                        Settings
+                        2021
                       </a>
                     </li>
                     <li>
@@ -71,7 +72,7 @@ const Summary = () => {
                         href="#"
                         className="block px-4 py-2 hover-bg-gray-100 dark:hover:bg-gray-600 dark:hover-text-white"
                       >
-                        Earnings
+                        2022
                       </a>
                     </li>
                     <li>
@@ -79,7 +80,7 @@ const Summary = () => {
                         href="#"
                         className="block px-4 py-2 hover-bg-gray-100 dark:hover:bg-gray-600 dark:hover-text-white"
                       >
-                        Sign out
+                        2023
                       </a>
                     </li>
                   </ul>
@@ -100,7 +101,9 @@ const Summary = () => {
               data-te-dataset-data="[2112, 2343, 2545, 3423, 2365, 1985, 987]"
             ></canvas>
           </div>
+          {/* <LineChart /> */}
         </div>
+
       </div>
     </div>
   );

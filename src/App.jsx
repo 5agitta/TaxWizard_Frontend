@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import MainLayout from "./components/dashboard/MainLayout";
 import Summary from "./pages/dashboard/Summary";
+import TaxCalculator from "./pages/dashboard/TaxCalculator";
 function App() {
   return (
     <div className="w-full mx-auto">
@@ -15,6 +16,10 @@ function App() {
           <Route
             path="/dashboard"
             element={<MainLayout><Summary/></MainLayout>}
+          />
+          <Route
+            path="/tax-calculator"
+            element={<MainLayout><TaxCalculator/></MainLayout>}
           />
         </Routes>
       </BrowserRouter>
