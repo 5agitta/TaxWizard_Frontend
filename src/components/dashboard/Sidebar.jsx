@@ -5,22 +5,22 @@ const Sidebar = () => {
     <div className=" bg-gray-800 w-64 h-screen fixed left-0 top-0 pt-16 text-white space-y-4">
       <ul className="relative space-y-4 wrap items-center space-x-4">
         <li className="border border-black p-4 bg-blue-500">
-          <Link to="/">Home</Link>
+          <Link to="/dashboard">Dashboard</Link>
         </li>
         <li>
-          <Link to="#">Tax Calculation</Link>
+          <Link to="/tax-calculator">Tax Calculation</Link>
         </li>
         <li>
-          <Link to="#">Report</Link>
+          <Link to="/report">Report</Link>
         </li>
         <li>
-          <Link to="#">History</Link>
+          <Link to="/history">History</Link>
         </li>
         <li>
-          <Link to="#">Return</Link>
+          <Link to="/pay">Pay</Link>
         </li>
         <li>
-          <Link to="#">FAQ</Link>
+          <Link to="/faq">FAQ</Link>
         </li>
       </ul>
     </div>
