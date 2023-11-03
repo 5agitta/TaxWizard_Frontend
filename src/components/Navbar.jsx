@@ -25,6 +25,7 @@ const Navbar = () => {
       {/* mobile display */}
       <div className="md:hidden flex justify-between items-center">
         <a href="/">
+          <p className="text-3xl font-bold">TaxWizard</p> 
           <img src="" alt="" className="w-32" />
         </a>
         <div onClick={handleNav} className="md:hidden justify-end items-center cursor-pointer z-20">
@@ -44,6 +45,7 @@ const Navbar = () => {
       >
         <div className="flex felx-col justify-center">
           <a href="/">
+           <p className="text-3xl font-bold">TaxWizard</p> 
             <img src="" alt="" className="w-32" />
           </a>
         </div>

@@ -10,48 +10,92 @@ import Faq from "./pages/dashboard/Faq";
 import Pay from "./pages/dashboard/Pay";
 import Navbar from "./components/Navbar";
 import Registration from "./pages/Registration";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import SignOut from "./components/SignOut";
 function App() {
+    // Check if the authToken is present before rendering the /dashboard route
   return (
     <div className="w-full mx-auto">
-    <Navbar/>
+      <Navbar />
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/"
-            element={<Home/>}
-          />
-          <Route
-            path="/registration"
-            element={<Registration/>}
-          />
+          <Route path="/" element={<Home />} />
+          <Route path="/registration" element={<Registration />} />
           <Route
             path="/dashboard"
-            element={<MainLayout><Summary/></MainLayout>}
+            element={<DashboardRoutes />}
           />
           <Route
             path="/tax-calculator"
-            element={<MainLayout><TaxCalculator/></MainLayout>}
+            element={
+              <MainLayout>
+                <TaxCalculator />
+              </MainLayout>
+            }
           />
           <Route
             path="/report"
-            element={<MainLayout><Report/></MainLayout>}
+            element={
+              <MainLayout>
+                <Report />
+              </MainLayout>
+            }
           />
           <Route
             path="/history"
-            element={<MainLayout><History/></MainLayout>}
+            element={
+              <MainLayout>
+                <History />
+              </MainLayout>
+            }
           />
           <Route
             path="/pay"
-            element={<MainLayout><Pay/></MainLayout>}
+            element={
+              <MainLayout>
+                <Pay />
+              </MainLayout>
+            }
           />
           <Route
             path="/faq"
-            element={<MainLayout><Faq/></MainLayout>}
+            element={
+              <MainLayout>
+                <Faq />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/logout"
+            element={
+              <MainLayout>
+                <SignOut />
+              </MainLayout>
+            }
           />
         </Routes>
       </BrowserRouter>
     </div>
   );
 }
+
+function DashboardRoutes() {
+    // You can use useNavigate here within the context of Router
+    const navigate = useNavigate();
+    const authToken = localStorage.getItem('authToken');
+  
+    useEffect(() => {
+        if (!authToken) {
+          navigate('/'); // Redirect to another route if authToken is missing
+        }
+      }, [authToken, navigate]);
+  
+    return (
+      <MainLayout>
+        <Summary />
+      </MainLayout>
+    );
+  }
 
 export default App;

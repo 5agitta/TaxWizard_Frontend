@@ -22,6 +22,9 @@ const Sidebar = () => {
         <li>
           <Link to="/faq">FAQ</Link>
         </li>
+        <li>
+          <Link to="/logout">Sign Out</Link>
+        </li>
       </ul>
     </div>
   );

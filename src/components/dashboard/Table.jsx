@@ -7,15 +7,15 @@ const Table = ({ data, itemsPerPage, totalPage }) => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
+//   const paginate = (pageNumber) => {
+//     setCurrentPage(pageNumber);
+//   };
 
   return (
     <div>
       <table className="min-w-full bg-slate-700 p-6 rounded-xl text-white ">
         <thead>
-          <tr className='bg-indigo-700'>
+          <tr className='bg-slate-500'>
             <th className="px-4 py-2">Name</th>
             <th className="px-4 py-2">Year</th>
             <th className="px-4 py-2">Color</th>
@@ -33,7 +33,7 @@ const Table = ({ data, itemsPerPage, totalPage }) => {
           ))}
         </tbody>
       </table>
-      <div className="mt-4 flex justify-center">
+      {/* <div className="mt-4 flex justify-center">
         {Array.from({ length: Math.ceil(totalPage) }, (_, i) => (
           <button
             key={i}
@@ -47,7 +47,7 @@ const Table = ({ data, itemsPerPage, totalPage }) => {
             {i + 1}
           </button>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
