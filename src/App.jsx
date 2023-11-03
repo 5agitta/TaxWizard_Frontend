@@ -8,14 +8,21 @@ import Report from "./pages/dashboard/Report";
 import History from "./pages/dashboard/History";
 import Faq from "./pages/dashboard/Faq";
 import Pay from "./pages/dashboard/Pay";
+import Navbar from "./components/Navbar";
+import Registration from "./pages/Registration";
 function App() {
   return (
     <div className="w-full mx-auto">
+    <Navbar/>
       <BrowserRouter>
         <Routes>
           <Route
             path="/"
             element={<Home/>}
+          />
+          <Route
+            path="/registration"
+            element={<Registration/>}
           />
           <Route
             path="/dashboard"
@@ -34,7 +41,7 @@ function App() {
             element={<MainLayout><History/></MainLayout>}
           />
           <Route
-            path="/return"
+            path="/pay"
             element={<MainLayout><Pay/></MainLayout>}
           />
           <Route

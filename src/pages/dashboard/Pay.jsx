@@ -60,7 +60,7 @@ const Pay = () => {
           data-aos-duration="3000"
         >
           <h1 className="text-center text-4xl font-bold text-white">
-            Tax Calculator
+            Tax Pay
           </h1>
           <div>
             <label className="pb-2 text-white">Year</label>
@@ -88,47 +88,9 @@ const Pay = () => {
               className="text-red-500"
             />
           </div>
+          
           <div>
-            <label className="pb-2 text-white">City</label>
-            <Field
-              as="select" // Use the "select" element for a dropdown
-              name="city" // Name attribute for the dropdown field
-              className="w-full p-2 border rounded"
-            >
-              <option value="Dhaka">Dhaka</option>
-              <option value="Chattogram">Chattogram</option>
-              <option value="Non-City Corporation">Non-City Corporation</option>
-              <option value="Other City Corporation">
-                Other City Corporation
-              </option>
-            </Field>
-
-            <ErrorMessage
-              name="name"
-              component="div"
-              className="text-red-500"
-            />
-          </div>
-          <div>
-            <label className="pb-2 text-white">Choose Gender</label>
-            <div>
-              <label className="pr-2 text-white">
-                <Field type="radio" name="gender" value="male" />
-                Male
-              </label>
-              <label className="pr-2 text-white">
-                <Field type="radio" name="gender" value="female" />
-                Female
-              </label>
-            </div>
-            <ErrorMessage
-              name="name"
-              component="div"
-              className="text-red-500"
-            />
-          </div>
-          <div>
-            <label className="pb-2 text-white">Age</label>
+            <label className="pb-2 text-white">Amount</label>
             <Field
               type="nubmer"
               name="age"
@@ -141,7 +103,7 @@ const Pay = () => {
             />
           </div>
 
-          <div>
+          {/* <div>
             <label className="pb-2 text-white">etin</label>
             <Field
               type="text"
@@ -153,14 +115,14 @@ const Pay = () => {
               component="div"
               className="text-red-500"
             />
-          </div>
+          </div> */}
 
           <div className="flex justify-center pt-8">
             <button
               type="submit"
               className="w-2/3 bg-blue-500 text-white font-bold py-2 px-4 rounded"
             >
-              Calculate
+              Pay
             </button>
           </div>
         </Form>

@@ -119,10 +119,10 @@ const TaxCalculator = () => {
               name="city"
               className="w-full p-2 border rounded"
             >
-              <option value="Dhaka">Dhaka</option>
-              <option value="Chattogram">Chattogram</option>
-              <option value="Non-City Corporation">Non-City Corporation</option>
-              <option value="Other City Corporation">
+              <option value="Dhaka_Or_Chittagong">Dhaka</option>
+              <option value="Dhaka_Or_Chittagong">Chattogram</option>
+              <option value="Other_City">Non-City Corporation</option>
+              <option value="Non_City">
                 Other City Corporation
               </option>
             </Field>
@@ -136,11 +136,11 @@ const TaxCalculator = () => {
             <label className="pb-2 text-white">Choose Gender</label>
             <div>
               <label className="pr-2 text-white">
-                <Field type="radio" name="gender" value="male" />
+                <Field type="radio" name="gender" value="Male" />
                 Male
               </label>
               <label className="pr-2 text-white">
-                <Field type="radio" name="gender" value="female" />
+                <Field type="radio" name="gender" value="Female" />
                 Female
               </label>
             </div>
@@ -182,14 +182,14 @@ const TaxCalculator = () => {
           </div>
         </Form>
       </Formik>
-      <div className="bg-slate-400 p-4 rounded-xl mt-4">
+      <div className="g-slate-800 p-4 rounded-xl mt-4">
         {showCard && (
           // Inside your TaxCalculator component
-          <div className="bg-slate-400 p-4 rounded-xl mt-4">
+          <div className="bg-slate-800 p-4 rounded-xl mt-4">
             {showCard && (
               <div>
-                <h2 className="text-center font-semibold text-3xl p-2">Tax Calculation Result</h2>
-                <table>
+                <h2 className="text-center font-semibold text-3xl p-4 text-white">Tax Calculation Result</h2>
+                <table className="text-white">
                   <tbody className="text-left p-2">
                     <tr className="border border-1">
                       <td className="border border-1 p-2">Tax ID:</td>
@@ -235,7 +235,7 @@ const TaxCalculator = () => {
                     </tr>
                   </tbody>
                 </table>
-                <button className="p-2 bg-blue-500 hover:bg-blue-800 hover:text-white rounded-xl" onClick={downloadPDF}>Download as PDF</button>
+                <button className="p-2 mt-4 bg-blue-500 hover:bg-blue-800 hover:text-white rounded-xl" onClick={downloadPDF}>Download as PDF</button>
               </div>
             )}
           </div>

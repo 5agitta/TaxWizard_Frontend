@@ -96,8 +96,8 @@ const Summary = () => {
           <div className="mx-auto w-3/5 overflow-hidden pt-8">
             <canvas
               data-te-chart="line"
-              data-te-dataset-label="Traffic"
-              data-te-labels="['Monday', 'Tuesday' , 'Wednesday' , 'Thursday' , 'Friday' , 'Saturday' , 'Sunday ']"
+              data-te-dataset-label="Tax"
+              data-te-labels="['2017','2018', '2019' , '2020' , '2021' , '2022' , '2023' ]"
               data-te-dataset-data="[2112, 2343, 2545, 3423, 2365, 1985, 987]"
             ></canvas>
           </div>

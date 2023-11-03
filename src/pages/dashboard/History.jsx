@@ -43,7 +43,7 @@ const History = () => {
 
   return (
     <div className="mt-24 ">
-      <h1 className="text-2xl font-bold mb-4">Paginated Table</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">History</h1>
       {loading ? (
         <p>Loading data...</p>
       ) : (
