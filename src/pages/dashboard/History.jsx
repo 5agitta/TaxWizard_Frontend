@@ -22,8 +22,8 @@ const History = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Tax History</h1>
+    <div className="flex flex-col items-center justify-between pt-24">
+      <h1 className="text-3xl p-4 font-bold">Tax History</h1>
       <table className="table-auto">
         <thead>
           <tr>
@@ -40,7 +40,7 @@ const History = () => {
               <td className="border px-4 py-2">{data.year}</td>
               <td className="border px-4 py-2">{data.income}</td>
               <td className="border px-4 py-2">{data.tax}</td>
-              <td className="border px-4 py-2">{data.taxPaid}</td>
+              <td className="border px-4 py-2">{data.tax-data.taxOwed}</td>
               <td className="border px-4 py-2">{data.taxOwed}</td>
             </tr>
           ))}

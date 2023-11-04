@@ -14,6 +14,7 @@ const TaxCalculator = () => {
     AOS.init();
     AOS.refresh();
   }, []);
+  const etin = localStorage.getItem('etin');
 
   const [showCard, setShowCard] = useState(false);
   const [responseData, setResponseData] = useState(null);
@@ -56,7 +57,7 @@ const TaxCalculator = () => {
     <div className="flex md:flex-col flex-row items-center justify-between h-screen">
       <Formik
         initialValues={{
-          etin: "",
+          etin: etin,
           year: "",
           income: "",
           city: "",
@@ -147,19 +148,7 @@ const TaxCalculator = () => {
             />
             <ErrorMessage name="age" component="div" className="text-red-500" />
           </div>
-          <div>
-            <label className="pb-2 text-white">etin</label>
-            <Field
-              type="text"
-              name="etin"
-              className="w-full p-2 border rounded"
-            />
-            <ErrorMessage
-              name="etin"
-              component="div"
-              className="text-red-500"
-            />
-          </div>
+
           <div className="flex justify-center pt-8">
             <button
               type="submit"

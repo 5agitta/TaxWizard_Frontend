@@ -12,6 +12,8 @@ const Pay = () => {
   }, []);
   const [showCard, setShowCard] = useState(false);
   const [responseData, setResponseData] = useState(null);
+  const etin = localStorage.getItem('etin');
+
 
   const validate = (values) => {
     const errors = {};
@@ -30,7 +32,7 @@ const Pay = () => {
       // Make a POST request to your API endpoint
       
       // const response = await axios.post('/greeting/save-for-name', values);
-      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/tax/yearly`, values);
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/tax/pay`, values);
 
       // Check the response and show a success message
       if (response.status === 200) {
@@ -50,7 +52,7 @@ const Pay = () => {
   return (
     <div className="flex md:flex-row flex-col items-center justify-between h-screen">
       <Formik 
-      initialValues={{ etin: "", year: "",income: "",city: "",gender: "",age: "" }}
+      initialValues={{ etin: etin, year: "",taxPaid: ""}}
       validate={validate}
       onSubmit={handleSubmit}
       >
@@ -75,25 +77,13 @@ const Pay = () => {
               className="text-red-500"
             />
           </div>
-          <div>
-            <label className="pb-2 text-white">Income</label>
-            <Field
-              type="number"
-              name="income"
-              className="w-full p-2 border rounded"
-            />
-            <ErrorMessage
-              name="name"
-              component="div"
-              className="text-red-500"
-            />
-          </div>
+
           
           <div>
             <label className="pb-2 text-white">Amount</label>
             <Field
               type="nubmer"
-              name="age"
+              name="taxPaid"
               className="w-full p-2 border rounded"
             />
             <ErrorMessage
@@ -131,16 +121,8 @@ const Pay = () => {
       <ToastContainer />
       {showCard && (
       <div className="bg-slate-400 p-4 rounded-xl mt-4">
-        <h2>Tax Calculation Result</h2>
-        <ul>
-          <li>Tax ID: {responseData.taxId}</li>
-          <li>Year: {responseData.year}</li>
-          <li>Total Income: {responseData.totalIncome}</li>
-          <li>Total Tax: {responseData.totalTax}</li>
-          <li>Total Tax Paid: {responseData.totalTaxPaid}</li>
-          <li>Total Tax Owed: {responseData.totalTaxOwed}</li>
-          <li>ETIN: {responseData.etin}</li>
-        </ul>
+        <h2>{responseData}</h2>
+
       </div>
     )}
     </div>

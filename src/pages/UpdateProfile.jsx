@@ -1,8 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 function UpdateProfile() {
   const etin = localStorage.getItem("etin");
+  const usenavigate = useNavigate();
   const [updatedData, setUpdatedData] = useState({
     name: "",
     email: "",
@@ -33,7 +35,7 @@ function UpdateProfile() {
       );
 
       if (response.status === 200) {
-        // Handle successful update, e.g., show a success message
+        usenavigate("/profile");
       }
     } catch (error) {
       console.error("Error updating profile:", error);

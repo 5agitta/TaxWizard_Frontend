@@ -26,6 +26,9 @@ const Sidebar = () => {
           <Link to="/update-profile">Update</Link>
         </li>
         <li>
+          <Link to="/profile">Profile</Link>
+        </li>
+        <li>
           <Link to="/logout">Sign Out</Link>
         </li>
       </ul>
