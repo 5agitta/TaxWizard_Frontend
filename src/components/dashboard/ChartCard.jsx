@@ -14,7 +14,7 @@ function ChartCard() {
     async function fetchData() {
       try {
         const response = await axios.post(
-          `${import.meta.env.VITE_BASE_URL}/tax/recent`,
+          `/tax/recent`,
           { etin }
         );
 

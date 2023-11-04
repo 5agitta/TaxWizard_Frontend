@@ -19,7 +19,7 @@ function UpdateProfile() {
   const updateProfile = async () => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL3}/user/update`,
+        `${import.meta.env.VITE_BASE_URL}/user/update`,
         {
           etin: etin,
           name: updatedData.name,
