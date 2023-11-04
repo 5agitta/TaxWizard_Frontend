@@ -9,7 +9,7 @@ const History = () => {
     const fetchData = async () => {
       try {
         // Fetch data from the 'tax/history' API
-        const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/tax/history`,etin);
+        const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/tax/history`,{etin});
         if (response.status === 200) {
           setIncomeAndTaxes(response.data);
         }
