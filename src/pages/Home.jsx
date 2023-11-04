@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 import { useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 
 export default function Home() {
@@ -103,7 +103,7 @@ export default function Home() {
       </div>
       <div className="text-center text-black">
           Dont have an account?
-          <a href="/registration" className="text-blue-500">Register here</a>
+          <Link to="/registration" className="text-blue-500">Register here</Link>
         </div>
     </div>
   );
