@@ -5,7 +5,7 @@ import ChartCard from "../../components/dashboard/ChartCard";
 // import LineChart from "../../components/dashboard/LineChart";
 
 const Summary = () => {
-  const [chartData, setChartData] = useState({ labels: '', data: '' });
+  // const [chartData, setChartData] = useState({ labels: '', data: '' });
   useEffect(() => {
     // Initialize the Traffic Chart
     initTE({ Chart });
@@ -13,30 +13,7 @@ const Summary = () => {
 
   const etin = localStorage.getItem('etin');
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/tax/recent`, { etin });
-        if (response.status === 200) {
-          const data = response.data;
-
-          // Extract years and taxes from the response and format them as strings
-          const years = data.map(item => item.year).join("','");
-          const taxes = data.map(item => item.tax).join(',');
-
-          setChartData({ labels: `['${years}']`, data: `[${taxes}]` });
-        }
-      } catch (error) {
-        console.error('Error fetching tax data:', error);
-      }
-    };
-
-    fetchData();
-
-    return () => {
-      // Clean-up code (if needed)
-    };
-  }, [etin]);
+  
 
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
@@ -90,30 +67,7 @@ const Summary = () => {
                         2019
                       </a>
                     </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover-bg-gray-100 dark:hover:bg-gray-600 dark:hover-text-white"
-                      >
-                        2021
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover-bg-gray-100 dark:hover:bg-gray-600 dark:hover-text-white"
-                      >
-                        2022
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover-bg-gray-100 dark:hover:bg-gray-600 dark:hover-text-white"
-                      >
-                        2023
-                      </a>
-                    </li>
+                    
                   </ul>
                 </div>
               )}
