@@ -18,7 +18,7 @@ function Profile() {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await axios.post(`${import.meta.env.VITE_BASE_URL3}/users/info`,{etin:etin});
+            const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/user/info`,{etin:etin});
             if (response.status === 200) {
               const data = response.data;
               setUserData(data);

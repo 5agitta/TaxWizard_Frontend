@@ -16,7 +16,7 @@ export default function Registration() {
       const handleSubmit = async (values, { setSubmitting }) => {
         try {
           const response = await axios.post(
-            `${import.meta.env.VITE_BASE_URL2}/authenticate/signup`,
+            `${import.meta.env.VITE_BASE_URL}/auth/signup`,
             values
           );
     

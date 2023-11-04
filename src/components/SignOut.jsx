@@ -11,7 +11,7 @@ function SignOut() {
   const handleLogout = async () => {
     try {
       // Make a POST request to the /authenticate/logout endpoint
-      const response = await axios.post(`${import.meta.env.VITE_BASE_URL2}/authenticate/logout`, {
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/logout`, {
         etin,
         accessToken: authToken,
       });

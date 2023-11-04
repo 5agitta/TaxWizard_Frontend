@@ -18,7 +18,7 @@ export default function Home() {
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL2}/authenticate/login`,
+        `${import.meta.env.VITE_BASE_URL}/auth/login`,
         values
       );
 
