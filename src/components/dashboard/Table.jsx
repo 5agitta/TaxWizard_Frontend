@@ -16,19 +16,22 @@ const Table = ({ data, itemsPerPage, totalPage }) => {
       <table className="min-w-full bg-slate-700 p-6 rounded-xl text-white ">
         <thead>
           <tr className='bg-slate-500'>
-            <th className="px-4 py-2">Name</th>
             <th className="px-4 py-2">Year</th>
-            <th className="px-4 py-2">Color</th>
-            <th className="px-4 py-2">Value</th>
+            <th className="px-4 py-2">Income</th>
+            <th className="px-4 py-2">Tax</th>
+            <th className="px-4 py-2">TaxPaid</th>
+            <th className="px-4 py-2">TaxOwed</th>
+
           </tr>
         </thead>
         <tbody className='text-center'>
           {currentItems.map((item, index) => (
             <tr key={index}>
-              <td className="px-4 py-2">{item.email}</td>
-              <td className="px-4 py-2">{item.first_name}</td>
-              <td className="px-4 py-2">{item.last_name}</td>
-              <td className="px-4 py-2">{item.avatar}</td>
+              <td className="px-4 py-2">{item.year}</td>
+              <td className="px-4 py-2">{item.income}</td>
+              <td className="px-4 py-2">{item.tax}</td>
+              <td className="px-4 py-2">{item.taxPaid}</td>
+              <td className="px-4 py-2">{item.taxOwed}</td>
             </tr>
           ))}
         </tbody>

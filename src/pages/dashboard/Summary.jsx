@@ -1,12 +1,43 @@
 import { useEffect, useState } from "react";
 import { initTE, Chart } from "tw-elements";
+import axios from "axios";
+import ChartCard from "../../components/dashboard/ChartCard";
 // import LineChart from "../../components/dashboard/LineChart";
 
 const Summary = () => {
+  const [chartData, setChartData] = useState({ labels: '', data: '' });
   useEffect(() => {
     // Initialize the Traffic Chart
     initTE({ Chart });
   }, []);
+
+  const etin = localStorage.getItem('etin');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/tax/recent`, { etin });
+        if (response.status === 200) {
+          const data = response.data;
+
+          // Extract years and taxes from the response and format them as strings
+          const years = data.map(item => item.year).join("','");
+          const taxes = data.map(item => item.tax).join(',');
+
+          setChartData({ labels: `['${years}']`, data: `[${taxes}]` });
+        }
+      } catch (error) {
+        console.error('Error fetching tax data:', error);
+      }
+    };
+
+    fetchData();
+
+    return () => {
+      // Clean-up code (if needed)
+    };
+  }, [etin]);
+
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -15,8 +46,8 @@ const Summary = () => {
   return (
     <div>
       <div>
-        <div className="flex flex-row justify-between items-center">
-          <div className="w-1/3 p-8 bg-slate-700 rounded-xl space-y-10">
+        <div className="flex flex-row justify-center gap-2 items-center">
+          <div className="w-1/3 p-8 bg-slate-700 rounded-xl space-y-10 ">
             <div className="relative inline-block text-center">
               <button
                 id="dropdownDefaultButton"
@@ -91,18 +122,22 @@ const Summary = () => {
             <p className="text-white text-lg">Owed: $208</p>
 
           </div>
-        </div>
-        <div>
-          <div className="mx-auto w-3/5 overflow-hidden pt-8">
-            <canvas
+          <div>
+          <div className=" w-full text-center pt-8">
+          <ChartCard />
+
+          {/* <canvas
               data-te-chart="line"
               data-te-dataset-label="Tax"
-              data-te-labels="['2017','2018', '2019' , '2020' , '2021' , '2022' , '2023' ]"
-              data-te-dataset-data="[2112, 2343, 2545, 3423, 2365, 1985, 987]"
-            ></canvas>
+              data-te-labels={chartData.labels}
+              data-te-dataset-data={JSON.stringify(chartData.data)}
+            ></canvas> */}
           </div>
           {/* <LineChart /> */}
+          {/* <ChartCard /> */}
         </div>
+        </div>
+        
 
       </div>
     </div>

@@ -20,6 +20,15 @@ const Navbar = () => {
           </a>
         </div>
         {/* links */}
+        <div>
+          <ul className="flex justify-center items-center gap-4">
+            <li className="mr-5 text-xl hover:text-red-500 hover:border-b border-b-red-500 hover:font-bold duration-100">
+              <a href="/profile" className="">
+                Profile
+              </a>
+            </li>
+          </ul>
+        </div>
         
       </div>
       {/* mobile display */}

@@ -13,6 +13,8 @@ import Registration from "./pages/Registration";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import SignOut from "./components/SignOut";
+import Profile from "./pages/Profile";
+import UpdateProfile from "./pages/UpdateProfile";
 function App() {
     // Check if the authToken is present before rendering the /dashboard route
   return (
@@ -71,6 +73,23 @@ function App() {
             element={
               <MainLayout>
                 <SignOut />
+              </MainLayout>
+            }
+          />
+
+            <Route
+            path="/profile"
+            element={
+              <MainLayout>
+                <Profile />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/update-profile"
+            element={
+              <MainLayout>
+                <UpdateProfile />
               </MainLayout>
             }
           />
