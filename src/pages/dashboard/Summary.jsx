@@ -26,7 +26,7 @@ const Summary = () => {
 
     // Fetch data for the selected year from your API
     axios
-        .post(`${import.meta.env.VITE_BASE_URL}}/tax/history`,{etin:etin})
+        .post(`${import.meta.env.VITE_BASE_URL}/tax/history`,{etin:etin})
         .then((response) => {
           const selectedYearData = response.data.find((data) => data.year === year);
 
